@@ -1,66 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Successlokam Quiz</title>
+    <title>Successlokam - Your Universe of Kerala PSC Success</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- tsParticles for the animated background -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 20px;
+        /* Custom Font Setup */
+        body { 
+            font-family: 'Manrope', sans-serif;
+            background-color: #0a0f2c; /* Deep space blue fallback */
         }
-        h1, h2 {
-            color: #333;
+        .font-malayalam { font-family: 'Tiro Devanagari Sanskrit', serif; }
+        
+        /* Particles container must be fixed and behind everything */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
-        a {
-            color: #007BFF;
+
+        /* Gradient Border for Glassmorphism Cards */
+        .gradient-border {
+            position: relative;
+            border-radius: 1.5rem; /* 24px */
+            padding: 1px; /* The thickness of the border */
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+            overflow: hidden; /* Important for child's border-radius */
+        }
+        .gradient-border > * {
+            border-radius: inherit; /* Child inherits parent's border-radius */
+        }
+
+        /* 3D Flip Card Animation */
+        .card-container { perspective: 1500px; }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .card-container:hover .card-inner,
+        .card-inner.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1.5rem; /* 24px */
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Scroll Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+        }
+        .is-visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Minor adjustment for Material Icons alignment */
+        .material-icons-outlined {
+            vertical-align: middle;
+        }
+        
+        /* Glowing CTA Button */
+        .glow-button {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.4);
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body>
+<body class="bg-[#0a0f2c] text-gray-200">
 
-    <h1>Privacy Policy for Successlokam Quiz</h1>
-    <p><strong>Effective Date:</strong> June 16, 2025</p>
+    <!-- Particle background container -->
+    <div id="tsparticles"></div>
 
-    <p>This page informs you of our policies regarding the collection, use, and disclosure of data when you use our Successlokam Quiz mobile application (the "Service").</p>
+    <!-- Header -->
+    <header class="sticky top-0 z-30 transition-all duration-300 bg-slate-900/50 backdrop-blur-lg border-b border-slate-100/10">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#" class="flex items-center gap-2">
+                 <span class="material-icons-outlined text-4xl text-cyan-400">auto_awesome</span>
+                <h1 class="text-2xl font-bold text-white tracking-wide">Successlokam</h1>
+            </a>
+            <a href="#download" class="hidden md:inline-block bg-white text-gray-900 font-bold py-2 px-5 rounded-full hover:bg-cyan-300 hover:text-black transition-colors">Download App</a>
+        </div>
+    </header>
 
-    <h2>Information Collection and Use</h2>
-    <p>We do not collect any personally identifiable information (PII) from you directly. Our app, Successlokam Quiz, is designed to be used without requiring you to provide personal data such as your name, email address, or phone number.</p>
+    <!-- Hero Section -->
+    <main class="relative overflow-hidden">
+        <div class="container mx-auto px-6 pt-24 pb-16 lg:pt-32 lg:pb-24 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Side: Text Content -->
+                <div class="text-center lg:text-left animate-on-scroll">
+                    <h2 class="text-4xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Explore Your Universe of 
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">
+                            Success.
+                        </span>
+                        <span class="font-malayalam block mt-3 text-cyan-300">വിജയം ഇനി സുനിശ്ചിതം.</span>
+                    </h2>
+                    <p class="mt-6 text-lg text-gray-300 max-w-lg mx-auto lg:mx-0">
+                        The ultimate quiz app with thousands of mock questions, interactive hints, and bilingual support to supercharge your Kerala PSC preparation.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#" class="glow-button bg-cyan-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-all flex items-center justify-center gap-2">
+                            <span class="material-icons-outlined">rocket_launch</span>
+                            Start Your Journey
+                        </a>
+                    </div>
+                </div>
 
-    <h3>Automatically Collected Data (Non-Personal Information)</h3>
-    <p>While we do not collect personal data, our app uses third-party services that may collect information used to identify you anonymously. This data is primarily used for serving advertisements and ensuring the app functions correctly.</p>
+                <!-- Right Side: Interactive Flip Card Demo -->
+                <div x-data="{ flipped: false }" class="card-container h-[520px] lg:h-[580px] animate-on-scroll" style="--delay: 200ms;">
+                    <div class="card-inner" :class="{ 'is-flipped': flipped }">
+                        <!-- Front of the Card -->
+                        <div class="card-front gradient-border">
+                            <div class="bg-slate-800/50 backdrop-blur-lg p-6 text-gray-100 shadow-2xl shadow-cyan-500/10 w-full h-full">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold">Question 101</h3>
+                                    <button @click="flipped = !flipped" class="text-gray-400 hover:text-cyan-400 transition-colors" title="Click to see hint">
+                                        <span class="material-icons-outlined text-4xl">lightbulb</span>
+                                    </button>
+                                </div>
+                                <hr class="my-4 border-gray-600">
+                                <div class="flex-grow flex flex-col justify-center">
+                                    <p class="text-2xl font-semibold mb-6">Who is known as the 'Father of the Indian Constitution'?</p>
+                                    <div class="space-y-3 text-lg">
+                                        <div class="p-4 border border-slate-600 rounded-xl hover:border-cyan-400 hover:bg-slate-700/50 transition-all cursor-pointer">A. Mahatma Gandhi</div>
+                                        <div class="p-4 border border-slate-600 rounded-xl hover:border-cyan-400 hover:bg-slate-700/50 transition-all cursor-pointer">B. Jawaharlal Nehru</div>
+                                        <div class="p-4 border-2 border-cyan-400 rounded-xl bg-cyan-500/20 ring-4 ring-cyan-500/10">C. Dr. B.R. Ambedkar</div>
+                                        <div class="p-4 border border-slate-600 rounded-xl hover:border-cyan-400 hover:bg-slate-700/50 transition-all cursor-pointer">D. Sardar Vallabhbhai Patel</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Back of the Card -->
+                        <div class="card-back gradient-border">
+                           <div class="bg-slate-900/80 backdrop-blur-lg p-6 shadow-2xl shadow-cyan-500/20 w-full h-full">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-white">Hint & Explanation</h3>
+                                    <button @click="flipped = !flipped" class="text-gray-300 hover:text-white" title="Click to go back">
+                                        <span class="material-icons-outlined text-4xl">arrow_back</span>
+                                    </button>
+                                </div>
+                                <hr class="my-4 border-gray-600">
+                                <div class="flex-grow flex items-center justify-center">
+                                    <p class="text-xl text-white font-semibold text-center">
+                                        Dr. B.R. Ambedkar was the chairman of the Drafting Committee. His pivotal role in drafting the constitution earned him this title. This is a frequently asked question.
+                                        <br><br>
+                                        <span class="font-malayalam text-cyan-300">ഡ്രാഫ്റ്റിംഗ് കമ്മിറ്റിയുടെ ചെയർമാനായിരുന്നു അദ്ദേഹം.</span>
+                                    </p>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <h2>Third-Party Services</h2>
-    <p>Our Service uses third-party services that have their own privacy policies. Below are the services we use:</p>
+    <!-- Features Section -->
+    <section id="features" class="py-20 lg:py-32 relative">
+         <!-- Background Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-cyan-900/50 blur-[150px] rounded-full z-[-1]"></div>
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-white">The Ultimate Toolkit for PSC Aspirants</h2>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Everything you need, built from the ground up for success.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Cards -->
+                <div class="gradient-border animate-on-scroll" style="--delay: 100ms;">
+                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
+                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">storage</span></div>
+                        <h3 class="text-xl font-bold text-white">Infinite Question Bank</h3>
+                        <p class="mt-2 text-gray-400">Practice with thousands of questions. Our database grows continuously.</p>
+                    </div>
+                </div>
+                <div class="gradient-border animate-on-scroll" style="--delay: 200ms;">
+                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
+                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">translate</span></div>
+                        <h3 class="text-xl font-bold text-white">English & Malayalam</h3>
+                        <p class="mt-2 text-gray-400">Switch languages instantly. Prepare in the language you are most comfortable with.</p>
+                    </div>
+                </div>
+                <div class="gradient-border animate-on-scroll" style="--delay: 300ms;">
+                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
+                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">flip_to_front</span></div>
+                        <h3 class="text-xl font-bold text-white">Flip-Card Hints</h3>
+                        <p class="mt-2 text-gray-400">Stuck? Flip the card for detailed explanations. Learning has never been this engaging.</p>
+                    </div>
+                </div>
+                <div class="gradient-border animate-on-scroll" style="--delay: 400ms;">
+                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
+                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">grid_view</span></div>
+                        <h3 class="text-xl font-bold text-white">Smart Question Navigator</h3>
+                        <p class="mt-2 text-gray-400">Jump to any question instantly. No more endless swiping.</p>
+                    </div>
+                </div>
+                <div class="gradient-border animate-on-scroll" style="--delay: 500ms;">
+                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
+                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">bar_chart</span></div>
+                        <h3 class="text-xl font-bold text-white">Performance Analytics</h3>
+                        <p class="mt-2 text-gray-400">Track your progress and identify weak areas. (Coming Soon!)</p>
+                    </div>
+                </div>
+                <div class="gradient-border animate-on-scroll" style="--delay: 600ms;">
+                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
+                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">redeem</span></div>
+                        <h3 class="text-xl font-bold text-white">Free to Use</h3>
+                        <p class="mt-2 text-gray-400">Powered by Firebase and supported by minimal ads.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="download" class="py-20 lg:py-32">
+        <div class="container mx-auto px-6 text-center animate-on-scroll">
+             <h2 class="text-3xl lg:text-5xl font-extrabold text-white">
+                Ready to Begin Your Success Story?
+            </h2>
+            <p class="font-malayalam text-2xl lg:text-3xl text-cyan-400 mt-4">
+                ഇപ്പോൾ തന്നെ ഡൗൺലോഡ് ചെയ്യൂ!
+            </p>
+            <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
+                Join thousands of aspirants on the path to a government job. Your journey to Successlokam starts now.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                 <a href="#" class="glow-button bg-cyan-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8L7 4z"/></svg>
+                    Get it on Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-100/10 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>© 2024 Successlokam. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center items-center gap-4 text-sm">
+                <a href="./privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+                <span class="text-gray-600">|</span>
+                <p>Built for the future leaders of Kerala.</p>
+            </div>
+        </div>
+    </footer>
     
-    <ul>
-        <li>
-            <strong>Google AdMob:</strong>
-            <p>Our app uses Google AdMob to display advertisements. AdMob may collect and use data such as your device's advertising ID, IP address, and app usage data to provide personalized ads. We do not have access to or control over this data collection.</p>
-            <p>You can learn more about how Google uses information from sites or apps that use their services by visiting their policy page: <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ad Policy</a>.</p>
-        </li>
-        <li>
-            <strong>Google Firebase (Cloud Firestore):</strong>
-            <p>Our app uses Firebase Cloud Firestore to download and display the quiz questions and related content. We use this service in a read-only capacity. The app does not send any of your personal information or device data to our Firebase database.</p>
-            <p>For more information, you can review the Firebase privacy policy: <a href="https://firebase.google.com/policies/analytics" target="_blank">Firebase Privacy and Security</a>.</p>
-        </li>
-    </ul>
+<script>
+    // --- tsParticles Initialization ---
+    document.addEventListener('DOMContentLoaded', () => {
+        tsParticles.load("tsparticles", {
+            fpsLimit: 60,
+            fullScreen: { enable: false },
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#22d3ee" }, // Cyan color for particles
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 2, random: true, anim: { enable: false } },
+                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.1, width: 1 },
+                move: {
+                    enable: true,
+                    speed: 0.5,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                },
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: false },
+                    resize: true,
+                },
+                modes: {
+                    grab: { distance: 140, line_opacity: 0.3 },
+                },
+            },
+            retina_detect: true,
+        });
+    });
 
-    <h2>Data Security</h2>
-    <p>The security of your data is important to us. The data for the quiz questions is retrieved over a secure connection (HTTPS). However, please remember that no method of transmission over the Internet or method of electronic storage is 100% secure. </p>
+    // --- Intersection Observer for Scroll Animations ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Apply delay if specified in style attribute
+                const delay = entry.target.style.getPropertyValue('--delay') || '0ms';
+                entry.target.style.animationDelay = delay;
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Optional: stop observing after animation
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
 
-    <h2>Children's Privacy</h2>
-    <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
-
-    <h2>Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
-
-    <h2>Contact Us</h2>
-    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
-    <p><strong>Email:</strong>successlokam@gmail.com</p>
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 
 </body>
 </html>
