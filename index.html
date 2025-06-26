@@ -16,7 +16,7 @@
         /* Custom Font Setup */
         body { 
             font-family: 'Manrope', sans-serif;
-            background-color: #0a0f2c; /* Deep space blue fallback */
+            background-color: #f8fafc; /* Light Slate Fallback */
         }
         .font-malayalam { font-family: 'Tiro Devanagari Sanskrit', serif; }
         
@@ -35,7 +35,7 @@
             position: relative;
             border-radius: 1.5rem; /* 24px */
             padding: 1px; /* The thickness of the border */
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02)); /* Subtle dark gradient for light theme */
             overflow: hidden; /* Important for child's border-radius */
         }
         .gradient-border > * {
@@ -92,24 +92,24 @@
             transition: all 0.3s ease-in-out;
         }
         .glow-button:hover {
-            box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.4);
+            box-shadow: 0 0 20px 7px rgba(14, 165, 233, 0.3); /* Adjusted cyan glow for light theme */
             transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-[#0a0f2c] text-gray-200">
+<body class="bg-slate-50 text-slate-800">
 
     <!-- Particle background container -->
     <div id="tsparticles"></div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-30 transition-all duration-300 bg-slate-900/50 backdrop-blur-lg border-b border-slate-100/10">
+    <header class="sticky top-0 z-30 transition-all duration-300 bg-white/80 backdrop-blur-lg border-b border-slate-900/10">
         <div class="container mx-auto flex justify-between items-center p-4">
             <a href="#" class="flex items-center gap-2">
-                 <span class="material-icons-outlined text-4xl text-cyan-400">auto_awesome</span>
-                <h1 class="text-2xl font-bold text-white tracking-wide">Successlokam</h1>
+                 <span class="material-icons-outlined text-4xl text-cyan-500">auto_awesome</span>
+                <h1 class="text-2xl font-bold text-slate-900 tracking-wide">Successlokam</h1>
             </a>
-            <a href="#download" class="hidden md:inline-block bg-white text-gray-900 font-bold py-2 px-5 rounded-full hover:bg-cyan-300 hover:text-black transition-colors">Download App</a>
+            <a href="#download" class="hidden md:inline-block bg-slate-800 text-white font-bold py-2 px-5 rounded-full hover:bg-slate-900 transition-colors">Download App</a>
         </div>
     </header>
 
@@ -119,14 +119,14 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Side: Text Content -->
                 <div class="text-center lg:text-left animate-on-scroll">
-                    <h2 class="text-4xl lg:text-6xl font-extrabold text-white leading-tight">
+                    <h2 class="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
                         Explore Your Universe of 
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-fuchsia-600">
                             Success.
                         </span>
-                        <span class="font-malayalam block mt-3 text-cyan-300">വിജയം ഇനി സുനിശ്ചിതം.</span>
+                        <span class="font-malayalam block mt-3 text-cyan-600">വിജയം ഇനി സുനിശ്ചിതം.</span>
                     </h2>
-                    <p class="mt-6 text-lg text-gray-300 max-w-lg mx-auto lg:mx-0">
+                    <p class="mt-6 text-lg text-slate-600 max-w-lg mx-auto lg:mx-0">
                         The ultimate quiz app with thousands of mock questions, interactive hints, and bilingual support to supercharge your Kerala PSC preparation.
                     </p>
                     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -142,21 +142,21 @@
                     <div class="card-inner" :class="{ 'is-flipped': flipped }">
                         <!-- Front of the Card -->
                         <div class="card-front gradient-border">
-                            <div class="bg-slate-800/50 backdrop-blur-lg p-6 text-gray-100 shadow-2xl shadow-cyan-500/10 w-full h-full">
+                            <div class="bg-white/70 backdrop-blur-lg p-6 text-slate-800 shadow-2xl shadow-cyan-500/10 w-full h-full">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-lg font-bold">Question 101</h3>
-                                    <button @click="flipped = !flipped" class="text-gray-400 hover:text-cyan-400 transition-colors" title="Click to see hint">
+                                    <button @click="flipped = !flipped" class="text-slate-500 hover:text-cyan-500 transition-colors" title="Click to see hint">
                                         <span class="material-icons-outlined text-4xl">lightbulb</span>
                                     </button>
                                 </div>
-                                <hr class="my-4 border-gray-600">
+                                <hr class="my-4 border-slate-200">
                                 <div class="flex-grow flex flex-col justify-center">
                                     <p class="text-2xl font-semibold mb-6">Who is known as the 'Father of the Indian Constitution'?</p>
                                     <div class="space-y-3 text-lg">
-                                        <div class="p-4 border border-slate-600 rounded-xl hover:border-cyan-400 hover:bg-slate-700/50 transition-all cursor-pointer">A. Mahatma Gandhi</div>
-                                        <div class="p-4 border border-slate-600 rounded-xl hover:border-cyan-400 hover:bg-slate-700/50 transition-all cursor-pointer">B. Jawaharlal Nehru</div>
+                                        <div class="p-4 border border-slate-200 rounded-xl hover:border-cyan-400 hover:bg-cyan-500/10 transition-all cursor-pointer">A. Mahatma Gandhi</div>
+                                        <div class="p-4 border border-slate-200 rounded-xl hover:border-cyan-400 hover:bg-cyan-500/10 transition-all cursor-pointer">B. Jawaharlal Nehru</div>
                                         <div class="p-4 border-2 border-cyan-400 rounded-xl bg-cyan-500/20 ring-4 ring-cyan-500/10">C. Dr. B.R. Ambedkar</div>
-                                        <div class="p-4 border border-slate-600 rounded-xl hover:border-cyan-400 hover:bg-slate-700/50 transition-all cursor-pointer">D. Sardar Vallabhbhai Patel</div>
+                                        <div class="p-4 border border-slate-200 rounded-xl hover:border-cyan-400 hover:bg-cyan-500/10 transition-all cursor-pointer">D. Sardar Vallabhbhai Patel</div>
                                     </div>
                                 </div>
                             </div>
@@ -164,19 +164,19 @@
                         
                         <!-- Back of the Card -->
                         <div class="card-back gradient-border">
-                           <div class="bg-slate-900/80 backdrop-blur-lg p-6 shadow-2xl shadow-cyan-500/20 w-full h-full">
+                           <div class="bg-white/80 backdrop-blur-lg p-6 shadow-2xl shadow-cyan-500/10 w-full h-full">
                                 <div class="flex justify-between items-center">
-                                    <h3 class="text-lg font-bold text-white">Hint & Explanation</h3>
-                                    <button @click="flipped = !flipped" class="text-gray-300 hover:text-white" title="Click to go back">
+                                    <h3 class="text-lg font-bold text-slate-900">Hint & Explanation</h3>
+                                    <button @click="flipped = !flipped" class="text-slate-500 hover:text-slate-900" title="Click to go back">
                                         <span class="material-icons-outlined text-4xl">arrow_back</span>
                                     </button>
                                 </div>
-                                <hr class="my-4 border-gray-600">
+                                <hr class="my-4 border-slate-200">
                                 <div class="flex-grow flex items-center justify-center">
-                                    <p class="text-xl text-white font-semibold text-center">
+                                    <p class="text-xl text-slate-800 font-semibold text-center">
                                         Dr. B.R. Ambedkar was the chairman of the Drafting Committee. His pivotal role in drafting the constitution earned him this title. This is a frequently asked question.
                                         <br><br>
-                                        <span class="font-malayalam text-cyan-300">ഡ്രാഫ്റ്റിംഗ് കമ്മിറ്റിയുടെ ചെയർമാനായിരുന്നു അദ്ദേഹം.</span>
+                                        <span class="font-malayalam text-cyan-600">ഡ്രാഫ്റ്റിംഗ് കമ്മിറ്റിയുടെ ചെയർമാനായിരുന്നു അദ്ദേഹം.</span>
                                     </p>
                                 </div>
                            </div>
@@ -190,54 +190,54 @@
     <!-- Features Section -->
     <section id="features" class="py-20 lg:py-32 relative">
          <!-- Background Glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-cyan-900/50 blur-[150px] rounded-full z-[-1]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-cyan-200/50 blur-[150px] rounded-full z-[-1]"></div>
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-3xl lg:text-5xl font-extrabold text-white">The Ultimate Toolkit for PSC Aspirants</h2>
-                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Everything you need, built from the ground up for success.</p>
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-slate-900">The Ultimate Toolkit for PSC Aspirants</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Everything you need, built from the ground up for success.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature Cards -->
                 <div class="gradient-border animate-on-scroll" style="--delay: 100ms;">
-                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
-                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">storage</span></div>
-                        <h3 class="text-xl font-bold text-white">Infinite Question Bank</h3>
-                        <p class="mt-2 text-gray-400">Practice with thousands of questions. Our database grows continuously.</p>
+                    <div class="h-full bg-white/60 backdrop-blur-md p-8 hover:bg-white/90 transition-all">
+                        <div class="text-cyan-500 mb-4"><span class="material-icons-outlined text-5xl">storage</span></div>
+                        <h3 class="text-xl font-bold text-slate-900">Infinite Question Bank</h3>
+                        <p class="mt-2 text-slate-600">Practice with thousands of questions. Our database grows continuously.</p>
                     </div>
                 </div>
                 <div class="gradient-border animate-on-scroll" style="--delay: 200ms;">
-                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
-                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">translate</span></div>
-                        <h3 class="text-xl font-bold text-white">English & Malayalam</h3>
-                        <p class="mt-2 text-gray-400">Switch languages instantly. Prepare in the language you are most comfortable with.</p>
+                    <div class="h-full bg-white/60 backdrop-blur-md p-8 hover:bg-white/90 transition-all">
+                        <div class="text-cyan-500 mb-4"><span class="material-icons-outlined text-5xl">translate</span></div>
+                        <h3 class="text-xl font-bold text-slate-900">English & Malayalam</h3>
+                        <p class="mt-2 text-slate-600">Switch languages instantly. Prepare in the language you are most comfortable with.</p>
                     </div>
                 </div>
                 <div class="gradient-border animate-on-scroll" style="--delay: 300ms;">
-                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
-                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">flip_to_front</span></div>
-                        <h3 class="text-xl font-bold text-white">Flip-Card Hints</h3>
-                        <p class="mt-2 text-gray-400">Stuck? Flip the card for detailed explanations. Learning has never been this engaging.</p>
+                    <div class="h-full bg-white/60 backdrop-blur-md p-8 hover:bg-white/90 transition-all">
+                        <div class="text-cyan-500 mb-4"><span class="material-icons-outlined text-5xl">flip_to_front</span></div>
+                        <h3 class="text-xl font-bold text-slate-900">Flip-Card Hints</h3>
+                        <p class="mt-2 text-slate-600">Stuck? Flip the card for detailed explanations. Learning has never been this engaging.</p>
                     </div>
                 </div>
                 <div class="gradient-border animate-on-scroll" style="--delay: 400ms;">
-                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
-                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">grid_view</span></div>
-                        <h3 class="text-xl font-bold text-white">Smart Question Navigator</h3>
-                        <p class="mt-2 text-gray-400">Jump to any question instantly. No more endless swiping.</p>
+                    <div class="h-full bg-white/60 backdrop-blur-md p-8 hover:bg-white/90 transition-all">
+                        <div class="text-cyan-500 mb-4"><span class="material-icons-outlined text-5xl">grid_view</span></div>
+                        <h3 class="text-xl font-bold text-slate-900">Smart Question Navigator</h3>
+                        <p class="mt-2 text-slate-600">Jump to any question instantly. No more endless swiping.</p>
                     </div>
                 </div>
                 <div class="gradient-border animate-on-scroll" style="--delay: 500ms;">
-                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
-                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">bar_chart</span></div>
-                        <h3 class="text-xl font-bold text-white">Performance Analytics</h3>
-                        <p class="mt-2 text-gray-400">Track your progress and identify weak areas. (Coming Soon!)</p>
+                    <div class="h-full bg-white/60 backdrop-blur-md p-8 hover:bg-white/90 transition-all">
+                        <div class="text-cyan-500 mb-4"><span class="material-icons-outlined text-5xl">bar_chart</span></div>
+                        <h3 class="text-xl font-bold text-slate-900">Performance Analytics</h3>
+                        <p class="mt-2 text-slate-600">Track your progress and identify weak areas. (Coming Soon!)</p>
                     </div>
                 </div>
                 <div class="gradient-border animate-on-scroll" style="--delay: 600ms;">
-                    <div class="h-full bg-slate-800/50 backdrop-blur-lg p-8 hover:bg-slate-800/80 transition-all">
-                        <div class="text-cyan-400 mb-4"><span class="material-icons-outlined text-5xl">redeem</span></div>
-                        <h3 class="text-xl font-bold text-white">Free to Use</h3>
-                        <p class="mt-2 text-gray-400">Powered by Firebase and supported by minimal ads.</p>
+                    <div class="h-full bg-white/60 backdrop-blur-md p-8 hover:bg-white/90 transition-all">
+                        <div class="text-cyan-500 mb-4"><span class="material-icons-outlined text-5xl">redeem</span></div>
+                        <h3 class="text-xl font-bold text-slate-900">Free to Use</h3>
+                        <p class="mt-2 text-slate-600">Powered by Firebase and supported by minimal ads.</p>
                     </div>
                 </div>
             </div>
@@ -247,13 +247,13 @@
     <!-- Final CTA Section -->
     <section id="download" class="py-20 lg:py-32">
         <div class="container mx-auto px-6 text-center animate-on-scroll">
-             <h2 class="text-3xl lg:text-5xl font-extrabold text-white">
+             <h2 class="text-3xl lg:text-5xl font-extrabold text-slate-900">
                 Ready to Begin Your Success Story?
             </h2>
-            <p class="font-malayalam text-2xl lg:text-3xl text-cyan-400 mt-4">
+            <p class="font-malayalam text-2xl lg:text-3xl text-cyan-600 mt-4">
                 ഇപ്പോൾ തന്നെ ഡൗൺലോഡ് ചെയ്യൂ!
             </p>
-            <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
+            <p class="mt-6 text-lg text-slate-600 max-w-xl mx-auto">
                 Join thousands of aspirants on the path to a government job. Your journey to Successlokam starts now.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -266,12 +266,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-100/10 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-500">
+    <footer class="border-t border-slate-200 py-8">
+        <div class="container mx-auto px-6 text-center text-slate-500">
             <p>© 2024 Successlokam. All Rights Reserved.</p>
             <div class="mt-4 flex justify-center items-center gap-4 text-sm">
-                <a href="./privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-                <span class="text-gray-600">|</span>
+                <a href="./privacy.html" class="hover:text-cyan-600 transition-colors">Privacy Policy</a>
+                <span class="text-slate-400">|</span>
                 <p>Built for the future leaders of Kerala.</p>
             </div>
         </div>
@@ -285,11 +285,11 @@
             fullScreen: { enable: false },
             particles: {
                 number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: "#22d3ee" }, // Cyan color for particles
+                color: { value: "#0ea5e9" }, // A slightly darker cyan for better visibility
                 shape: { type: "circle" },
                 opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
-                size: { value: 2, random: true, anim: { enable: false } },
-                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.1, width: 1 },
+                size: { value: 3, random: true, anim: { enable: false } }, // Slightly larger particles
+                line_linked: { enable: true, distance: 150, color: "#475569", opacity: 0.2, width: 1 }, // Dark lines for light bg
                 move: {
                     enable: true,
                     speed: 0.5,
@@ -308,7 +308,7 @@
                     resize: true,
                 },
                 modes: {
-                    grab: { distance: 140, line_opacity: 0.3 },
+                    grab: { distance: 140, line_opacity: 0.4 },
                 },
             },
             retina_detect: true,
