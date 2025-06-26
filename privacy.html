@@ -14,7 +14,7 @@
     <style>
         body { 
             font-family: 'Manrope', sans-serif;
-            background-color: #0a0f2c; /* Deep space blue fallback */
+            background-color: #f8fafc; /* Light Slate Fallback */
         }
         #tsparticles {
             position: fixed;
@@ -26,7 +26,7 @@
         }
     </style>
 </head>
-<body class="bg-[#0a0f2c] text-gray-300">
+<body class="bg-slate-50 text-slate-700">
 
     <!-- Particle background container -->
     <div id="tsparticles"></div>
@@ -35,52 +35,54 @@
     <div class="relative z-10 container mx-auto max-w-4xl px-6 py-16 lg:py-24">
         
         <div class="mb-12">
-            <a href="./index.html" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+            <a href="./index.html" class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 transition-colors font-semibold">
                 <span class="material-icons-outlined">arrow_back</span>
                 Back to Home
             </a>
         </div>
 
-        <div class="bg-slate-900/50 backdrop-blur-lg p-8 md:p-12 rounded-2xl border border-slate-100/10">
-            <h1 class="text-4xl font-extrabold text-white mb-2">Privacy Policy</h1>
-            <p class="text-gray-400">For Successlokam Quiz App</p>
-            <p class="mt-4 text-gray-500"><strong>Effective Date:</strong> June 16, 2024</p>
+        <div class="bg-white/80 backdrop-blur-lg p-8 md:p-12 rounded-2xl border border-slate-200">
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-2">Privacy Policy</h1>
+            <p class="text-slate-500">For Successlokam Quiz App</p>
+            <p class="mt-4 text-slate-500"><strong>Effective Date:</strong> June 16, 2024</p>
 
-            <hr class="my-8 border-slate-700">
+            <hr class="my-8 border-slate-200">
 
-            <p class="mb-6">This page informs you of our policies regarding the collection, use, and disclosure of data when you use our Successlokam Quiz mobile application (the "Service").</p>
-
-            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Information Collection and Use</h2>
-            <p class="mb-4">We do not collect any personally identifiable information (PII) from you directly. Our app, Successlokam Quiz, is designed to be used without requiring you to provide personal data such as your name, email address, or phone number.</p>
-
-            <h3 class="text-xl font-semibold text-gray-200 mt-6 mb-3">Automatically Collected Data (Non-Personal)</h3>
-            <p>While we do not collect personal data, our app uses third-party services that may collect anonymous information to serve advertisements and ensure the app functions correctly.</p>
-
-            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Third-Party Services</h2>
-            <p class="mb-4">Our Service uses third-party services that have their own privacy policies. Below are the services we use:</p>
-            
-            <ul class="list-disc list-inside space-y-6 text-gray-300">
-                <li>
-                    <strong class="text-gray-200">Google AdMob:</strong>
-                    <p class="pl-2 mt-1">Our app uses Google AdMob to display advertisements. AdMob may use data such as your device's advertising ID and app usage to provide personalized ads. We do not have access to or control over this data collection. You can learn more by visiting their policy page: <a href="https://policies.google.com/technologies/ads" target="_blank" class="text-cyan-400 hover:underline">Google Ad Policy</a>.</p>
-                </li>
-                <li>
-                    <strong class="text-gray-200">Google Firebase (Cloud Firestore):</strong>
-                    <p class="pl-2 mt-1">Our app uses Firebase Cloud Firestore to download quiz questions. The app does not send any of your personal or device data to our Firebase database. For more information, you can review the Firebase privacy policy: <a href="https://firebase.google.com/policies/analytics" target="_blank" class="text-cyan-400 hover:underline">Firebase Privacy and Security</a>.</p>
-                </li>
-            </ul>
-
-            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Data Security</h2>
-            <p>The security of your data is important to us. Quiz data is retrieved over a secure connection (HTTPS). However, no method of transmission over the Internet is 100% secure.</p>
-
-            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Children's Privacy</h2>
-            <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
-
-            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time. You are advised to review this Privacy Policy periodically for any changes. Changes are effective when they are posted on this page.</p>
-
-            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Contact Us</h2>
-            <p>If you have any questions about our Privacy Policy, please contact us at: <a href="mailto:successlokam@gmail.com" class="text-cyan-400 hover:underline">successlokam@gmail.com</a></p>
+            <div class="prose prose-slate max-w-none prose-h2:font-bold prose-h2:text-slate-900 prose-a:text-cyan-600 hover:prose-a:text-cyan-700">
+                <p class="mb-6">This page informs you of our policies regarding the collection, use, and disclosure of data when you use our Successlokam Quiz mobile application (the "Service").</p>
+    
+                <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Information Collection and Use</h2>
+                <p class="mb-4">We do not collect any personally identifiable information (PII) from you directly. Our app, Successlokam Quiz, is designed to be used without requiring you to provide personal data such as your name, email address, or phone number.</p>
+    
+                <h3 class="text-xl font-semibold text-slate-800 mt-6 mb-3">Automatically Collected Data (Non-Personal)</h3>
+                <p>While we do not collect personal data, our app uses third-party services that may collect anonymous information to serve advertisements and ensure the app functions correctly.</p>
+    
+                <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Third-Party Services</h2>
+                <p class="mb-4">Our Service uses third-party services that have their own privacy policies. Below are the services we use:</p>
+                
+                <ul class="list-disc list-inside space-y-6 text-slate-700">
+                    <li>
+                        <strong class="text-slate-800">Google AdMob:</strong>
+                        <p class="pl-2 mt-1">Our app uses Google AdMob to display advertisements. AdMob may use data such as your device's advertising ID and app usage to provide personalized ads. We do not have access to or control over this data collection. You can learn more by visiting their policy page: <a href="https://policies.google.com/technologies/ads" target="_blank" class="text-cyan-600 hover:underline">Google Ad Policy</a>.</p>
+                    </li>
+                    <li>
+                        <strong class="text-slate-800">Google Firebase (Cloud Firestore):</strong>
+                        <p class="pl-2 mt-1">Our app uses Firebase Cloud Firestore to download quiz questions. The app does not send any of your personal or device data to our Firebase database. For more information, you can review the Firebase privacy policy: <a href="https://firebase.google.com/policies/analytics" target="_blank" class="text-cyan-600 hover:underline">Firebase Privacy and Security</a>.</p>
+                    </li>
+                </ul>
+    
+                <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Data Security</h2>
+                <p>The security of your data is important to us. Quiz data is retrieved over a secure connection (HTTPS). However, no method of transmission over the Internet is 100% secure.</p>
+    
+                <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Children's Privacy</h2>
+                <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+    
+                <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. You are advised to review this Privacy Policy periodically for any changes. Changes are effective when they are posted on this page.</p>
+    
+                <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Contact Us</h2>
+                <p>If you have any questions about our Privacy Policy, please contact us at: <a href="mailto:successlokam@gmail.com" class="text-cyan-600 hover:underline">successlokam@gmail.com</a></p>
+            </div>
         </div>
     </div>
 
@@ -92,15 +94,15 @@
             fullScreen: { enable: false },
             particles: {
                 number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: "#22d3ee" },
+                color: { value: "#0ea5e9" }, // A slightly darker cyan
                 opacity: { value: 0.5, random: true },
-                size: { value: 2, random: true },
-                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.1, width: 1 },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#475569", opacity: 0.2, width: 1 }, // Dark lines
                 move: { enable: true, speed: 0.5 },
             },
             interactivity: {
                 events: { onhover: { enable: true, mode: "grab" } },
-                modes: { grab: { distance: 140, line_opacity: 0.3 } },
+                modes: { grab: { distance: 140, line_opacity: 0.4 } },
             },
             retina_detect: true,
         });
